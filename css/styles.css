@@ -1,0 +1,260 @@
+:root {
+    --bg-color: #1a1c18;
+    /* Dark earthy background */
+    --card-bg: #2d3029;
+    --text-main: #e0e0e0;
+    --accent-green: #76c442;
+    /* Retro Gameboy Green */
+    --accent-soil: #b86f50;
+    /* Terracotta/Brick */
+    --font-retro: 'VT323', monospace;
+    --font-main: 'Inter', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    font-family: var(--font-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* --- UTILS --- */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.pixel-font {
+    font-family: var(--font-retro);
+}
+
+.btn {
+    display: inline-block;
+    background: var(--accent-green);
+    color: #000;
+    padding: 10px 20px;
+    font-family: var(--font-retro);
+    font-size: 1.2rem;
+    text-decoration: none;
+    border: 4px solid #000;
+    /* Pixel border effect */
+    box-shadow: 4px 4px 0px #000;
+    transition: transform 0.1s, box-shadow 0.1s;
+    cursor: pointer;
+}
+
+.btn:active {
+    transform: translate(4px, 4px);
+    box-shadow: 0px 0px 0px #000;
+}
+
+/* --- HERO SECTION --- */
+header {
+    text-align: center;
+    padding: 80px 20px;
+    position: relative;
+}
+
+.avatar-frame {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    background: #333;
+    image-rendering: pixelated;
+    border: 4px solid var(--accent-green);
+    box-shadow: 6px 6px 0px #000;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-placeholder {
+    font-family: var(--font-retro);
+    font-size: 3rem;
+    color: var(--accent-green);
+}
+
+h1 {
+    font-family: var(--font-retro);
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    color: var(--accent-green);
+    text-shadow: 4px 4px 0px #000;
+}
+
+.tagline {
+    font-size: 1.2rem;
+    height: 1.3rem;
+    color: #aaa;
+    margin-bottom: 30px;
+}
+
+.status-bar {
+    background: #000;
+    color: var(--accent-green);
+    padding: 10px;
+    font-family: var(--font-retro);
+    font-size: 1.2rem;
+    display: inline-block;
+    border: 2px solid var(--accent-green);
+    margin-top: 20px;
+}
+
+/* --- SECTIONS --- */
+section {
+    margin-bottom: 60px;
+    padding: 40px;
+    background: var(--card-bg);
+    border-left: 6px solid var(--accent-soil);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+section h2 {
+    font-family: var(--font-retro);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: var(--accent-soil);
+    border-bottom: 2px dashed #555;
+    padding-bottom: 10px;
+}
+
+/* --- EXPERIENCE --- */
+.job-item {
+    margin-bottom: 40px;
+    border-left: 2px solid #555;
+    padding-left: 20px;
+}
+
+.job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.job-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #fff;
+}
+
+.company {
+    color: var(--accent-green);
+    font-family: var(--font-retro);
+    font-size: 1.2rem;
+}
+
+.date {
+    font-size: 0.9rem;
+    color: #888;
+    font-family: var(--font-retro);
+}
+
+.job-details li {
+    margin-bottom: 8px;
+    list-style: square;
+    margin-left: 20px;
+    color: #ccc;
+}
+
+/* --- SKILLS GRID --- */
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+
+.skill-tag {
+    background: #222;
+    border: 2px solid #444;
+    padding: 10px;
+    text-align: center;
+    font-family: var(--font-retro);
+    color: var(--accent-green);
+    transition: 0.2s;
+}
+
+.skill-tag:hover {
+    border-color: var(--accent-green);
+    background: #0f1a0f;
+    transform: translateY(-2px);
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 40px;
+    font-family: var(--font-retro);
+    color: #666;
+    border-top: 4px solid #000;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .job-header {
+        flex-direction: column;
+    }
+
+    section {
+        padding: 20px;
+    }
+}
+
+/* --- PROJECTS (SIDE QUESTS) --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.project-card {
+    background: #222;
+    border: 2px dashed #444; /* Dashed border implies "WIP" or secondary item */
+    padding: 15px;
+    transition: 0.2s;
+}
+
+.project-card:hover {
+    border-color: var(--accent-soil);
+    background: #2a2a2a;
+}
+
+.project-title {
+    font-family: var(--font-retro);
+    color: var(--accent-soil);
+    font-size: 1.4rem;
+    margin-bottom: 5px;
+}
+
+.project-tech {
+    font-size: 0.8rem;
+    color: var(--accent-green);
+    font-family: var(--font-retro);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.project-desc {
+    font-size: 0.9rem;
+    color: #aaa;
+    line-height: 1.4;
+}
+
+.project-desc a, .project-desc a:visited{
+    color: var(--accent-green);
+}
